@@ -1,0 +1,24 @@
+<h1>Your Shopping Cart</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cart.shopping_cart_items.each do |item| %>
+      <tr>
+        <td><%= item.item.name %></td>
+        <td><%= item.item.price %></td>
+        <td><%= link_to 'Show', item.item %></td>
+        <td><%= link_to 'Remove', cart_remove_path(id: item.item.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
