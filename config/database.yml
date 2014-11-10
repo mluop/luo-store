@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: luo-store_production
-  username: luo-store
-  password: <%= ENV['LUO-STORE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['HEROKU_POSTGRESQL_PINK_URL'] %>
